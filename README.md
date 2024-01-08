@@ -9,7 +9,28 @@ Password : bandit0
 ------------------------------
 
 ### Bandit Level 1
-The password is in *readme* file in home directory  
+The password is in *readme* file in home directory
+
 using `more readme`, veiw the contents of the file :  
+
 Password : NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+------------------------------
+
+### Bandit Level 2 
+The password is stored in file with name as *-*.   
+
+To view contents of file use `cat <-` or `more -`.  
+
+Password : rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+---------------------------------------
+
+### Bandit Level 3 
+The password is stored in file with spaces in its name.`more` or `cat` command by default doesnt perceive a filename with spaces.  
+To view file contents we will have to use :
+..* `more "spaces in this filename"` or `cat "spaces in this filename"` : Here the entire name in *""* will be read as a single file name.  
+..* `more spaces\ in\ this\ filename` or `cat spaces\ in\ this\ filename` : Here the backslashes `\` cancels the more to read spaces .  
+Password : aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG  
+
  
