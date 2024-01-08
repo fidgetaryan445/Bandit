@@ -37,4 +37,24 @@ To view file contents we will have to use :
 
 Password : aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG  
 
+--------------------------------------------
+
+### Bandit Level 4
+The password is stored in hidden file in inhere directory .
+
+So first use `cd inhere ` to change directories.  
+
+Then use `ls -a` to show all (including hidden ones) files and directories.  
+
+Use `more .hidden` to access the contents of hidden file .  
+
+. before the name hides the file/ directory .
+
+Password : 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+------------------------------------------------
+
+### Bandit Level 5
+
+
  
