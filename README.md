@@ -55,6 +55,15 @@ Password : 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 ------------------------------------------------
 
 ### Bandit Level 5
+The password is stored in only human readable file i.e. the files in the directory will have Binary data type except for one humanly readable whcih will be ASCII.  
+
+To find such file in directory we can change directory to inhere and then use `file ./*`  
+
+Password : lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+--------------------------------------------
+
+### Bandit Level 6
 
 
  
