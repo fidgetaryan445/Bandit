@@ -69,6 +69,19 @@ The password for the next level is stored in a file somewhere under the inhere d
     human-readable
     1033 bytes in size
     not executable
+    
+To use find with such properties we can use :  
+
+..* `-size 1033c` can be used to display only files of size 1033 bytes.
+
+..* `! -executable` is used to find non executable file .
+
+..* `file` is a bash command to execute it as well we use `-exec file '{}' \;`. Now to only display files of ASCII data type we use `| grep ASCII `
+
+*#NOTE:* `\; ` is used to properly terminate the exec command .  
+
+Password : P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
 
 
 
