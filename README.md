@@ -11,7 +11,7 @@ Password : bandit0
 ### Bandit Level 1
 The password is in *readme* file in home directory
 
-using `more readme`, veiw the contents of the file :  
+using `more readme`, view the contents of the file :  
 
 Password : NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
 
@@ -31,9 +31,9 @@ The password is stored in file with spaces in its name.`more` or `cat` command b
 
 To view file contents we will have to use :
 
-..* `more "spaces in this filename"` or `cat "spaces in this filename"` : Here the entire name in *""* will be read as a single file name.  
+* `more "spaces in this filename"` or `cat "spaces in this filename"` : Here the entire name in *""* will be read as a single file name.  
 
-..* `more spaces\ in\ this\ filename` or `cat spaces\ in\ this\ filename` : Here the backslashes `\` cancels the more to read spaces .  
+* `more spaces\ in\ this\ filename` or `cat spaces\ in\ this\ filename` : Here the backslashes `\` cancels the more to read spaces .  
 
 Password : aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG  
 
@@ -72,15 +72,69 @@ The password for the next level is stored in a file somewhere under the inhere d
     
 To use find with such properties we can use :  
 
-..* `-size 1033c` can be used to display only files of size 1033 bytes.
+* `-size 1033c` can be used to display only files of size 1033 bytes.
 
-..* `! -executable` is used to find non executable file .
+* `! -executable` is used to find non executable file .
 
-..* `file` is a bash command to execute it as well we use `-exec file '{}' \;`. Now to only display files of ASCII data type we use `| grep ASCII `
+* `file` is a bash command to execute it as well we use `-exec file '{}' \;`. Now to only display files of ASCII data type we use `| grep ASCII `
 
 *#NOTE:* `\; ` is used to properly terminate the exec command .  
 
 Password : P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+-------------------------------------------------
+
+### Bandit Level 7 
+The password for the next level is stored somewhere on the server and has all of the following properties:
+
+    owned by user bandit7
+    owned by group bandit6
+    33 bytes in size
+
+To search the entire directory we will specify *root directory* as starting point using ("/").
+
+In Linux, when you execute a command, there are two primary output streams: standard output (stdout) and standard error (stderr).By default, both stdout and stderr are displayed on the terminal. They are separate streams, but they are often displayed together.
+
+To hide the error output stream we can redirect the error stream(descripitor 2) we can use :
+
+`find / -size 33c  -user bandit7 -group bandit6 2>/dev/null`  #/dev/null: acts as a black hole for data in Linux , hence redirecting stderr to /dev/null esentially discards the data.  
+
+*#Note:* Using 2>/dev/null discard all error messages. If we only want to discard error messages with a particular string we can use 2>&1 to redirect stderr to stdout then we can use grep command to filer out result from stdout.
+
+eg: `find / -size 33c  -user bandit7 -group bandit6 2>&1 | grep -v "Permission denied"`
+
+Password : z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+----------------------------------------------------
+
+### Bandit Level 8
+The password for the next level is stored in the file data.txt next to the word millionth.
+
+To read this line we will use grep command. `grep millionth *` will output all the line in the directory which have millionth word.
+
+For finding the line a specific file such as **data.txt** use : `grep millionth data.txt` .
+
+Password : TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+
+----------------------------------------------------
+
+### Bandit Level 9 
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once.
+
+Use `sort` function to sort the data . Then on sorted output use `uniq -c` to count the number of all different kind of lines appearing.
+
+Now this `uniq -c` outputs the data in 2 column format so using using `-sort k 1n` we will sort the data on the basis of their occurance in the file. 
+
+Finally usinh `head -1` we get the line which only repeats once in the output.
+
+Command is `sort data.txt | uniq -c | sort -k 1 | sort data.txt | uniq -c | sort -k 1n | head -1`
+
+Password : EN632PlfYiZbn3PhVK3XOGSlNInNE00t  
+
+-------------------------------------------
+
+
+
 
 
 
