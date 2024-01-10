@@ -127,7 +127,7 @@ Now this `uniq -c` outputs the data in 2 column format so using using `-sort k 1
 
 Finally usinh `head -1` we get the line which only repeats once in the output.
 
-Command is `sort data.txt | uniq -c | sort -k 1 | sort data.txt | uniq -c | sort -k 1n | head -1`
+Command is `sort data.txt | uniq -c | sort -k 1n | head -1`
 
 ####                                          or 
 
@@ -142,6 +142,20 @@ Password : EN632PlfYiZbn3PhVK3XOGSlNInNE00t
 *NOTE:  `uniq` command only detects adjacent duplicates hence it is important to use `sort` function before using `uniq`*
 
 -------------------------------------------
+## Bandit Level 10 
+To read human-readble strings in file we can use `strings` command  in linux .
+
+The code will be as follows : `strings data.txt | grep ===` to filter human-readble lines that contain ("===") within them.  
+
+Password : G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s  
+
+------------------------------------------
+## Bandit Level 11 
+The password is encoded in base64 inside data.txt.
+
+So we will use `base64 data.txt -d`.
+
+Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
 
 
 
