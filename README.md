@@ -129,7 +129,17 @@ Finally usinh `head -1` we get the line which only repeats once in the output.
 
 Command is `sort data.txt | uniq -c | sort -k 1 | sort data.txt | uniq -c | sort -k 1n | head -1`
 
+####                                          or 
+
+Use `sort` to sort the data and then use `uniq -u` to print the lines which occur only once.
+
+Command is `sort data.txt | uniq -u`
+
+
+
 Password : EN632PlfYiZbn3PhVK3XOGSlNInNE00t  
+
+*NOTE:  `uniq` command only detects adjacent duplicates hence it is important to use `sort` function before using `uniq`*
 
 -------------------------------------------
 
