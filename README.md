@@ -153,7 +153,7 @@ Password : G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
 ## Bandit Level 11 
 The password is encoded in base64 inside data.txt.
 
-So we will use `base64 data.txt -d`.
+So we will use `base64 data.txt -d`
 
 Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
 
