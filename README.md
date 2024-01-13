@@ -157,6 +157,35 @@ So we will use `base64 data.txt -d`
 
 Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
 
+--------------------------------------------
+## Bandit Level 12
+The password is in data.txt file encoded in rot13 format .
+
+To decode the file we will use translate `tr` command to rotate all the letters .
+
+The translate command will be written as follows `tr [A-Za-z] [N-ZA-Mn-za-m]` .
+
+We have to translate the date of *data.txt* so wewill use :
+
+`more data.txt | tr [A-Za-z] [N-ZA-Mn-za-m]`
+
+It will the translate the data of the output of `more` command i.e. the data of data.txt .
+
+The output is as follows:
+
+`The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv`
+
+Password : JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+------------------------------------------------
+## Bandit Level 13 
+The file is a hexdump so first use `xxd -r data.txt ans` . This will convert hexdump back to a text file on which we have to operate.
+Now using `xxd *filename* | head ` look at the first bytes of the file . Now from https://en.wikipedia.org/wiki/List_of_file_signatures check for the decompression we need to use. Rename the file accordingly and then decompress the file .
+
+Password : wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw 
+
+------------------------------------------------
+## Bandit Level 14 
 
 
 
