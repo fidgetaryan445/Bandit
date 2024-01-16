@@ -186,8 +186,12 @@ Password : wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 
 ------------------------------------------------
 ## Bandit Level 14 
-
-
+Use the scp command to copy the private key file from remote system to local system.
+Change the permissions of this key file to be executed from `ssh -i` command and then use  `ssh -i` command to login without password.
+* `scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private ./try`
+* `cd try`
+* `chmod 700 sshkey.private`
+* `ssh -i /home/manglik242_manas/try/sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
 
 
 
