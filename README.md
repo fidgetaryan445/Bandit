@@ -193,6 +193,24 @@ Change the permissions of this key file to be executed from `ssh -i` command and
 * `chmod 700 sshkey.private`
 * `ssh -i /home/manglik242_manas/try/sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
 
+After logging in we cane find the password in /etc/bandit_pass/bandit14 :
+
+`more /etc/bandit_pass/bandit14`
+
+Password : fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+------------------------------------------------------
+## Bandit Level 15
+We use *netcat* command (`nc`) to connect to network _localhost_ on port *30000* . 
+
+We then submit password of previous level . After that password for level 15 will surface.
+
+`nc localhost 30000`
+
+Password  : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+-------------------------------------------------------
+## Bandit Level 16
 
 
 
